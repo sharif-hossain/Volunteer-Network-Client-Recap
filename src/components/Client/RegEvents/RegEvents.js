@@ -7,15 +7,26 @@ import "./RegEvents.css";
 const RegEvents = () => {
   const [loggedInUser] = useContext(userContext);
   const [userEvents, setUserEvents] = useState([]);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:5000/subscribedEvents?email=' + loggedInUser.email)
       .then(res => res.json())
-      .then(data => setUserEvents(data));
-  }, [loggedInUser.email]);
+      .then(data => {
+        setUserEvents(data);
+        setIsDeleted(false);
+      });
+  }, [loggedInUser.email, isDeleted]);
 
- const handleClick = (id) =>{
-   console.log(id)
+ const handleDelete = (id) =>{
+   fetch(`http://localhost:5000/delete/${id}`, {
+     method: 'DELETE',
+   })
+   .then(res => res.json())
+   .then(result =>{
+     if(result)
+      {setIsDeleted(true);}
+   })
  }
   return (
     <div className="reg-event">
@@ -24,7 +35,7 @@ const RegEvents = () => {
 
         <div className="row mt-5 ml-5">
           {userEvents.map((event) => (
-            <SubscribedEvents key={event._id} event={event} handleClick={handleClick}></SubscribedEvents>
+            <SubscribedEvents key={event._id} event={event} handleDelete={handleDelete}></SubscribedEvents>
           ))}
         </div>
       </div>

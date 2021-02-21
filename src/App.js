@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AddEvent from "./components/Admin/AddEvent/AddEvent";
+import RegisteredList from "./components/Admin/RegisteredList/RegisteredList";
 import Login from "./components/Client/Login/Login";
 import PrivateRoute from "./components/Client/PrivateRoute/PrivateRoute";
 import RegEvents from "./components/Client/RegEvents/RegEvents";
@@ -33,6 +34,9 @@ function App() {
           </PrivateRoute>
           <Route path="/admin">
             <AddEvent></AddEvent>
+          </Route>
+          <Route path="/registeredList">
+            <RegisteredList/>
           </Route>
           <Route path="*">
             <NotFound/>

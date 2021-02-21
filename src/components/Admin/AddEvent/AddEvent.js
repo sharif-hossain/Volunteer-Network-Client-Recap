@@ -46,7 +46,7 @@ const AddEvent = () => {
           <br />
         </div>
         <div>
-          <a href="/admin">Volunteer register list</a>
+          <a href="/registeredList">Volunteer register list</a>
         </div>
       </div>
       <div className="col-md-10">

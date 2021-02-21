@@ -1,7 +1,7 @@
 import React from "react";
 import './SubscribedEvents.css';
 
-const SubscribedEvents = ({ event, handleClick}) => {
+const SubscribedEvents = ({ event, handleDelete}) => {
   console.log(event);
   return (
     <div className="col-md-5 d-flex user-event">
@@ -11,7 +11,7 @@ const SubscribedEvents = ({ event, handleClick}) => {
       <div className="px-3">
         <h5>{event.title}</h5>
         <p>{(new Date(event.date)).toDateString('dd/MM/yyyy')}</p>
-        <button onClick={()=>handleClick(event._id)} className="btn btn-secondary cancel-btn">Cancel</button>
+        <button onClick={()=>handleDelete(event._id)} className="btn btn-secondary cancel-btn">Cancel</button>
       </div>
     </div>
   );

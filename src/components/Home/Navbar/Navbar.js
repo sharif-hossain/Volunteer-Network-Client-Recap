@@ -4,7 +4,7 @@ import { userContext } from "../../../App";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
   return (
     <nav class="navbar navbar-expand-lg navbar-light my-2">
@@ -50,25 +50,23 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        {loggedInUser ? (
-          <div>
-            <Link to="/register">
-              <button class="btn btn-success my-2 my-sm-0 ml-3" type="submit">
-                Register
-              </button>
-            </Link>
-
-            <Link to="/admin">
-              <button class="btn btn-dark my-2 my-sm-0 ml-3" type="submit">
-                Admin
-              </button>
-            </Link>
-          </div>
+        {loggedInUser.email ? (
+          <button
+            className="btn btn-warning"
+            onClick={() => setLoggedInUser({})}
+          >
+            {loggedInUser.displayName}[Logout]
+          </button>
         ) : (
-          <div>
-            <h6 className="ml-4">{loggedInUser.displayName}</h6>
-          </div>
+          <Link to="/login">
+            <button className="btn btn-primary mr-3">Register</button>
+          </Link>
         )}
+        {
+          <Link to="/admin">
+            <button className="btn btn-secondary">Admin</button>
+          </Link>
+        }
       </div>
     </nav>
   );

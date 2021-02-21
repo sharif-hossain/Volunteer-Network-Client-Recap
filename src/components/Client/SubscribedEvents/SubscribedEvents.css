@@ -1,0 +1,19 @@
+.event-img{
+    height: 150px;
+    width: 200px;
+}
+.user-event{
+    position: relative;
+    border: 1px solid lightgray;
+    padding: 15px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.cancel-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+}

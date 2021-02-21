@@ -1,0 +1,13 @@
+.img-logo{
+    height: 50px;
+}
+.event-bg{
+    height: 890px;
+    background-color: #f1f5f8;
+}
+.form{
+    border: 1px solid lightgray;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+}

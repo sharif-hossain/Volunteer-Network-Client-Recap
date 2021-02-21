@@ -1,0 +1,26 @@
+.reg-img{
+    display: inline-block;
+    /* text-align: center; */
+    height: 50px;
+}
+.reg-bg{
+    height: 860px;
+    background-color: #f1f5f8;
+}
+.form-design{
+    border: 2px solid lightGray;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+ .form-border .form-group input{
+    border: none;
+    border-bottom: 1.5px solid lightgray;
+    border-radius: 0;
+    width: 100%;
+}
+
+.reg-btn{
+    width: 100%;
+}
